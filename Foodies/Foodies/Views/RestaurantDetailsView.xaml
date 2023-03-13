@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Foodies.Views.RestaurantDetailsView">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" Padding="15">
+            <Label Text="Restaurant Name : " FontSize="Large" TextColor="Blue" FontAttributes="Bold"/>
+            <Label x:Name="Name" Text="{Binding Name}" HorizontalOptions="Center" FontSize="Large" TextColor="Red"/>
+            <Label Text="Address" FontSize="Large" TextColor="Blue" FontAttributes="Bold"/>
+            <Label x:Name="Address" Text="{Binding Address}" HorizontalOptions="Center" FontSize="Medium" Margin="0,0,0,30" TextColor="red"/>
+            <ListView x:Name="listView" ItemTapped="OnItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal" Padding="10">
+                                    <Label Text="{Binding item}" ></Label>
+                                    <StackLayout HorizontalOptions="EndAndExpand">
+                                        <Label Text="{Binding cost}" ></Label>
+                                    </StackLayout>
+                                </StackLayout>
+                                <Label Text="{Binding description}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout x:Name="adminAccess" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,0,0,20">
+                <Button Text="Edit" Clicked="EditRestaurant"
+                        BackgroundColor="Orange" TextColor="White"
+                        FontAttributes="Bold" Padding="10"></Button>
+                <Button Text="Delete" Clicked="DeleteRestaurant"
+                        BackgroundColor="Red" TextColor="White"
+                        FontAttributes="Bold" Padding="10"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

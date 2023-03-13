@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Foodies.Views.AddRestaurantView">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" Padding="20">
+            <Label Text="Add New Restaurant" FontSize="30" HorizontalOptions="Center"  FontAttributes="Bold" TextColor="Blue"></Label>
+            <Grid Margin="0,20,0,0" RowSpacing="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0">
+                    <Label Text="Name:" FontSize="16"></Label>
+                    <Entry x:Name="displayName" Placeholder="Restaurant Name" FontSize="18" Text="{Binding displayName}"
+                           HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"
+                           IsSpellCheckEnabled="false"/>
+                </StackLayout>
+                <StackLayout Grid.Row="1">
+                    <Label Text="Address:" FontSize="16"></Label>
+                    <Editor x:Name="address" Placeholder="Restaurant Address" FontSize="18" Text="{Binding address}"
+                            HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"
+                            IsSpellCheckEnabled="false"/>
+                </StackLayout>
+                <StackLayout Grid.Row="2">
+                    <Label Text="Price For couple:" FontSize="16"></Label>
+                    <Entry x:Name="priceForTwo" FontSize="18" Placeholder="Cost for two persons" Text="{Binding priceForTwo}" Keyboard="Numeric"
+                           HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+                <Button Grid.Row="5" Text="Add" Command="{Binding RegisterCommand}" BackgroundColor="Blue" TextColor="White" FontAttributes="Bold"></Button>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
