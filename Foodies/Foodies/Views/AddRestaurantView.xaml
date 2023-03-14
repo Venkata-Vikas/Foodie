@@ -5,7 +5,7 @@
     x:Class="Foodies.Views.AddRestaurantView">
     <ContentPage.Content>
         <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" Padding="20">
-            <Label Text="Add New Restaurant" FontSize="30" HorizontalOptions="Center"  FontAttributes="Bold" TextColor="Blue"></Label>
+            <Label Text="Add Restaurant" FontSize="30" HorizontalOptions="Center"  FontAttributes="Bold" TextColor="Blue"></Label>
             <Grid Margin="0,20,0,0" RowSpacing="15">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -30,7 +30,7 @@
                     <Entry x:Name="priceForTwo" FontSize="18" Placeholder="Cost for two persons" Text="{Binding priceForTwo}" Keyboard="Numeric"
                            HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" />
                 </StackLayout>
-                <Button Grid.Row="5" Text="Add" Command="{Binding RegisterCommand}" BackgroundColor="Blue" TextColor="White" FontAttributes="Bold"></Button>
+                <Button Grid.Row="4" Text="Add" Command="{Binding RegisterCommand}" CornerRadius="20" Margin="70,0" BackgroundColor="Blue" TextColor="White" FontAttributes="Bold"></Button>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
